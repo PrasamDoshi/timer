@@ -1,0 +1,254 @@
+body {
+    background-color: #acd2fb;
+    /* background-color: black; */
+}
+
+
+#clock {
+    /* border: 2px solid black; */
+    background: url('timer.png');
+    /* filter: invert(100%); */
+    background-size: 100%;
+    height: 35vw;
+    width: 35vw;
+    margin: auto;
+    position: relative;
+}
+
+.dot {
+    height: 3%;
+    width: 3%;
+    background-color: wheat;
+    border-radius: 50%;
+    position: absolute;
+    top: 49%;
+    left: 47.7%;
+}
+
+.secondhand {
+    position: absolute;
+    background: rgb(173, 128, 45);
+    height: 28%;
+    width: 0.5%;
+    top: 22%;
+    left: 49%;
+    opacity: 0.7;
+    transform-origin: bottom;
+}
+
+#time {
+    position: absolute;
+    top: 106%;
+    left: 28.5%;
+    height: 9%;
+    width: 41.5%;
+    border-radius: 10px;
+    background-color: rgb(240, 229, 208);
+}
+
+
+/* which button will show up  */
+#start {
+    display: block;
+}
+
+#stop {
+    display: none;
+}
+
+#pause {
+    display: none;
+}
+
+#resume {
+    display: none;
+}
+
+#stop,
+#start {
+    position: absolute;
+    text-transform: uppercase;
+    background-color: rgba(61, 61, 240, 0.8);
+    top: 119%;
+    left: 42.5%;
+    height: 5%;
+    width: 12.5%;
+    border-radius: 24px;
+    color: white;
+}
+
+#stop {
+    background-color: #cb370e;
+}
+
+#pause,
+#resume {
+    position: absolute;
+    text-transform: uppercase;
+    top: 119%;
+    left: 42.5%;
+    height: 5%;
+    width: 12.5%;
+    border-radius: 24px;
+    background-color: #19d5b9;
+    color: white;
+}
+
+.active .start_stop #stop,
+.active .start_stop #start {
+    left: 32.5%;
+}
+
+.active .pause_play #pause,
+.active .pause_play #resume {
+    left: 55.5%;
+}
+
+
+.active #stop {
+    display: block;
+}
+
+.active #start {
+    display: none;
+}
+
+.active #pause {
+    display: block;
+}
+
+.action #pause {
+    display: none;
+}
+
+.action #resume {
+    display: block;
+}
+
+/* designing buttons  */
+#stop::before,
+#resume::before,
+#pause::before,
+#start::before {
+    content: "";
+    background-color: rgba(2, 2, 24, 0.8);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 24px;
+    z-index: -1;
+    transition: all 0.3;
+}
+
+/* #stop::before{
+    background-color: #cb370e;
+} */
+#stop:hover::before,
+#resume:hover::before,
+#pause:hover::before,
+#start:hover::before {
+    transform: scaleX(1.2)scaleY(1.6);
+    opacity: 0;
+}
+
+#stop:hover,
+#resume:hover,
+#pause:hover,
+#start:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+    transform: translateY(-3px);
+}
+
+#stop:active,
+#resume:active,
+#pause:active,
+#start:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* setting responsiveness  */
+@media (max-width:1250px) {
+
+    #start,
+    #stop,
+    #resume,
+    #pause {
+        width: 15%;
+    }
+
+}
+
+@media (max-width:1000px) {
+
+    #start,
+    #stop,
+    #resume,
+    #pause {
+        width: 25%;
+        height: 8%;
+    }
+
+    #time {
+        width: 60%;
+
+    }
+
+    .active .pause_play #pause,
+    .active .pause_play #resume {
+        left: 60.5%;
+    }
+}
+
+@media (max-width:600px) {
+
+    #start,
+    #stop,
+    #resume,
+    #pause {
+        width: 30%;
+        height: 10%;
+    }
+
+    #time {
+        width: 65%;
+        left: 25%;
+
+    }
+
+    active .start_stop #stop,
+    .active .start_stop #start {
+        left: 26.5%;
+    }
+
+    .active .pause_play #pause,
+    .active .pause_play #resume {
+        left: 65.5%;
+    }
+
+}
+
+@media (max-width:500px) {
+
+    #start,
+    #stop,
+    #resume,
+    #pause {
+        width: 39%;
+        height: 12%;
+    }
+
+    #time {
+        width: 80%;
+        left: 25%;
+
+    }
+
+    .active .pause_play #pause,
+    .active .pause_play #resume {
+        left: 75%;
+    }
+
+}
